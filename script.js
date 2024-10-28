@@ -11,12 +11,16 @@ const openModal = function () {
 };
 
 for (let i = 0; i < btnsOpenModal.length; i++)
-  console.log(btnsOpenModal[i].addEventListener('click', openModal));
+  btnsOpenModal[i].addEventListener('click', openModal);
 
 const closeModal = function () {
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
 };
-btnCloseModal.addEventListener('click', closeModal);
 
+btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', function (e) {
+  console.log(e.key);
+});
